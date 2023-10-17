@@ -1,50 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library Project</title>
+<html>
+  <head> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <style>
+     </style>
+  
+   <title>Library</title>
   </head>
-  <body>
-    <main
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      "
-    >
-      <div>
-        <h1>Library Project</h1>
-        <div id="library">
-          <!-- Add table here -->
-          <table id="table" style="min-width: 680px; margin: 2rem">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Read</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Name of the Wind</td>
-                <td>Patrick Rothfuss</td>
-                <td>
-                  <input
-                    type="checkbox"
-                    name="read"
-                    id="readLibraryCheckbox"
-                    checked
-                    disabled
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <body> 
+    <input type="text" id="titleInput" name="title" value="">
+    <Link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+  
+    <div class="container">Read All The Books In The Library</div>
+      <h1>Library Project</h1>
+      <form id="form">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
         </div>
-    </main>
+      </form>
+    </div>
 
-    <script src="app.js"></script>
+    <div id="newBtn-Container">
+      <button id="'newBtn">Read a Book</button>
+    </div>
+    <div id="popUp"></div>
+
+    <form id="form">
+      <div class="form-group">
+        <span class="close">&times;</span>
+        <label for="title">Read Property</label>
+
+        
+
+        <div>
+          <input type="text" name="title" id="title" required />
+          <button id="newBtn"></button>
+          <label for="Books">Books</label>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <div id="checkbox">
+          <label for="read">Read</label>
+          <input type="checkbox" name="read" id="read" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submitBtn">Add Book</button>
+      </div>
+    </form>
+    <div id="library">
+      <table id="table" style="min-width: 680px; margin: 2rem">
+      </body>
+        <head>
+          </head>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Read</th>
+          </tr>
+        </head>
+        <tbody id="tableBody">
+          <tr>
+            <td>Name of the Wind</td>
+            <td>Patrick Rothfuss</td>
+            <td>
+              <input
+                type="checkbox"
+                name="read"
+                id="readLibraryCheckbox"
+              
+            
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="App.js"></script>
   </body>
 </html>
