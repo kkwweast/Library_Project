@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const books = [
   {
     id: 1,
@@ -113,3 +114,77 @@ function underlineText() {
   element.style.textDecoration = 'underline';
 }
 
+=======
+// Book class
+class Book {
+    constructor(title, author, read) {
+        this.id = Math.random().toString(36).substr(2, 9); // Generate a random id for the book
+        this.title = title;
+        this.author = author;
+        this.read = read;
+    }
+}
+
+// Library class
+class Library {
+    constructor() {
+        this.bookCount = 0;
+        this.books = [];
+    }
+
+    markRead(checkbox, id) {
+        this.books.forEach((book) => {
+            if (book.id === id) {
+                book.read = true;
+                checkbox.checked = true;
+                checkbox.disabled = true;
+            }
+        });
+    }
+
+    addBook() {
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const read = document.getElementById('read').checked;
+        const newBook = new Book(title, author, read);
+        this.books.push(newBook);
+
+        const tableBody = document.getElementById('book-table-body');
+        const newRow = tableBody.insertRow();
+        newRow.setAttribute('id', newBook.id);
+        const titleCell = newRow.insertCell();
+        const authorCell = newRow.insertCell();
+        const readCell = newRow.insertCell();
+        const removeCell = newRow.insertCell();
+
+        titleCell.innerHTML = newBook.title;
+        authorCell.innerHTML = newBook.author;
+        readCell.innerHTML = newBook.read ? 'Read' : 'Not Read';
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => {
+            this.removeBook(newBook.id);
+            newRow.remove();
+        });
+        removeCell.appendChild(removeButton);
+
+        this.bookCount++;
+    }
+
+    removeBook(id) {
+        this.books = this.books.filter((book) => book.id !== id);
+        this.bookCount--;
+    }
+}
+
+// Create an instance of the Library class
+const library = new Library();
+
+// Event listener for the 'Add Book' button
+const addButton = document.getElementById('add-book-button');
+addButton.addEventListener('click', () => {
+    library.addBook();
+});
+
+>>>>>>> Stashed changes
